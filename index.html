@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Учёт расходов</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1>Учёт расходов</h1>
+    <input class="js-exspense-input" type="number" />
+    <button class="js-button">Добавить</button>
+    <p > Лимит: <span class="js-limit"></span> руб.</p>
+    <p >Сумма: <span class="js-sum-exspenses"></span> руб.</p>
+    <p >Статус: <span class="js-status status_green">всё хорошо</span></p>
+
+    <h2>История:</h2>
+    <ol class="history_exspenses js-history">
+    </ol>
+
+    <button class="js-reset-button">Сбросить расходы</button>
+    <script src="index.js"></script>
+  </body>
+</html>
