@@ -11,8 +11,10 @@ const sumNode = document.querySelector(".js-sum-exspenses");
 const limitNode = document.querySelector(".js-limit");
 const statusNode = document.querySelector(".js-status");
 const resetButtonNode = document.querySelector('.js-reset-button');
+const categoryNode = document.querySelector('.js-category');
 
 const expenses = [];
+const categories = [];
 
 init(expenses);
 
@@ -27,18 +29,21 @@ buttonNode.addEventListener("click", function () {
 });
 
 resetButtonNode.addEventListener('click',function(){
-    expenses.
+    expenses.length = 0;
+    categories.length = 0;
     init(expenses);
 });
 
 function init(expenses) {
   limitNode.innerText = LIMIT;
-  statusNode.innerText = STATUS_IN_LIMIT;
-  sumNode.innerText = calculateExpanses(expenses);
+  renderStatus(expenses);
+  renderSum(expenses);
+  renderHistory(expenses);
 }
 
 function trackExpanse(exspense) {
   expenses.push(exspense);
+  categories.push(categoryNode.options[categoryNode.selectedIndex].text)
 }
 
 function getExpanseFromUser() {
@@ -78,7 +83,7 @@ function renderStatus(expenses) {
     statusNode.innerText = STATUS_IN_LIMIT;
     statusNode.classList.remove(STATUS_OUT_OF_LIMIT_CLASSNAME)
   } else { // больше лимита
-    statusNode.innerText = STATUS_OUT_OF_LIMIT + " (" + (LIMIT - sum)+")";
+    statusNode.innerText = STATUS_OUT_OF_LIMIT + " (" + (LIMIT - sum)+" руб.)";
     statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME)
   }
 }
