@@ -3,12 +3,30 @@ button {
   font-family: "Inter", sans-serif;
 }
 
+button{
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+.main{
+    width: 1050px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
 .main__header {
   font-size: 32px;
   font-weight: 700;
   line-height: 32px;
 
   margin-bottom: 32px;
+}
+
+.main__form{
+    margin-bottom: 60px;
 }
 
 .main__form__input {
@@ -30,6 +48,7 @@ button {
   border: none;
 
   background-color: #0094ff;
+  color: #fff;
 }
 
 .main__form__select {
@@ -47,12 +66,47 @@ button {
   appearance: none;
 }
 
-.main__form__select:not([multiple]) {
+.main__form__select {
   padding-right: 1.2em;
   background-repeat: no-repeat;
   background-position: calc(100% - 0.25em) 50%;
   background-size: 22px 15px;
   background-image: url(arrow.png);
+}
+
+.main__info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__info__heading{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    margin-bottom: 13px;
+}
+
+.main__info__sum{
+    margin-bottom: 35px;
+}
+
+.main__history{
+    margin-right: 351px;
+}
+
+.history_exspenses{
+    font-size: 32px;
+    line-height: 38px;
+
+    white-space: nowrap;
+}
+
+.main__description{
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 38px;
+
+    white-space: nowrap;
 }
 
 .status_green {
@@ -61,4 +115,15 @@ button {
 
 .status_red {
   color: red;
+}
+
+.main__reset-btn{
+    font-size: 32px;
+    line-height: 38px;
+    color: white;
+    background-color: #FF0000;
+
+    padding: 11px 100px;
+    margin-top: 112px;
+    border: 0;
 }

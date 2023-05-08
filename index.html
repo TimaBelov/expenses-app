@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Учёт расходов</title>
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,9 +17,9 @@
   <body>
     <main class="main">
       <h1 class="main__header">Учёт расходов</h1>
-      <form action="" class="main__form">
+      <form class="main__form">
         <input class="js-exspense-input main__form__input" type="number" />
-        <button class="js-button main__form__add-btn">Добавить</button>
+        <button class="js-button-add main__form__add-btn">Добавить</button>
         <select class="js-category main__form__select">
           <option value="0">Транспорт</option>
           <option value="1">Кафе и рестораны</option>
@@ -26,12 +27,29 @@
           <option value="3">Развлечения</option>
         </select>
       </form>
-      <p>Лимит: <span class="js-limit"></span> руб.</p>
-      <p>Сумма: <span class="js-sum-exspenses"></span> руб.</p>
-      <p>Статус: <span class="js-status status_green">всё хорошо</span></p>
-      <h2>История:</h2>
-      <ol class="history_exspenses js-history"></ol>
-      <button class="js-reset-button">Сбросить расходы</button>
+      <section class="main__info">
+        <div>
+          <p class="main__info__heading">
+            Лимит: <span class="js-limit main__description"></span> руб.
+          </p>
+          <p class="main__info__heading main__info__sum">
+            Сумма: <span class="js-sum-exspenses main__description"></span> руб.
+          </p>
+          <p class="main__info__heading">
+            Статус:
+            <span class="js-status status_green main__description"
+              >всё хорошо</span
+            >
+          </p>
+          <button class="js-reset-button main__reset-btn">
+            Сбросить расходы
+          </button>
+        </div>
+        <div>
+          <h2 class="main__info__heading main__history">История:</h2>
+          <ol class="history_exspenses js-history"></ol>
+        </div>
+      </section>
     </main>
     <script src="index.js"></script>
   </body>

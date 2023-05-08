@@ -5,20 +5,20 @@ const STATUS_OUT_OF_LIMIT = "всё плохо";
 const STATUS_OUT_OF_LIMIT_CLASSNAME = "status_red";
 
 const inputNode = document.querySelector(".js-exspense-input");
-const buttonNode = document.querySelector(".js-button");
+const buttonNode = document.querySelector(".js-button-add");
 const historyNode = document.querySelector(".js-history");
 const sumNode = document.querySelector(".js-sum-exspenses");
 const limitNode = document.querySelector(".js-limit");
 const statusNode = document.querySelector(".js-status");
-const resetButtonNode = document.querySelector('.js-reset-button');
-const categoryNode = document.querySelector('.js-category');
+const resetButtonNode = document.querySelector(".js-reset-button");
+const categoryNode = document.querySelector(".js-category");
 
 const expenses = [];
 const categories = [];
 
 init(expenses);
 
-buttonNode.addEventListener("click", function () {
+buttonNode.addEventListener("click", function (e) {
   // добавляем трату в массив
   getExpanseFromUser();
   //список трат и считаем сумму
@@ -26,12 +26,13 @@ buttonNode.addEventListener("click", function () {
   renderSum(expenses);
   // работа со статусом
   renderStatus(expenses);
+  e.preventDefault();
 });
 
-resetButtonNode.addEventListener('click',function(){
-    expenses.length = 0;
-    categories.length = 0;
-    init(expenses);
+resetButtonNode.addEventListener("click", function () {
+  expenses.length = 0;
+  categories.length = 0;
+  init(expenses);
 });
 
 function init(expenses) {
@@ -43,7 +44,7 @@ function init(expenses) {
 
 function trackExpanse(exspense) {
   expenses.push(exspense);
-  categories.push(categoryNode.options[categoryNode.selectedIndex].text)
+  categories.push(categoryNode.options[categoryNode.selectedIndex].text);
 }
 
 function getExpanseFromUser() {
@@ -67,9 +68,9 @@ function calculateExpanses(expenses) {
 
 function renderHistory(expenses) {
   let html = ``;
-  expenses.forEach((element) => {
-    html += `<li>${element} ${CURRENCY}</li>`;
-  });
+  for(let i = 0;i< expenses.length;i++){
+    html += `<li>${expenses[i]} ${CURRENCY} - ${categories[i].toLowerCase()}</li>`;
+  }
   historyNode.innerHTML = html;
 }
 
@@ -79,11 +80,14 @@ function renderSum(expenses) {
 
 function renderStatus(expenses) {
   const sum = calculateExpanses(expenses);
-  if (sum <= LIMIT) { // в лимите 
+  if (sum <= LIMIT) {
+    // в лимите
     statusNode.innerText = STATUS_IN_LIMIT;
-    statusNode.classList.remove(STATUS_OUT_OF_LIMIT_CLASSNAME)
-  } else { // больше лимита
-    statusNode.innerText = STATUS_OUT_OF_LIMIT + " (" + (LIMIT - sum)+" руб.)";
-    statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME)
+    statusNode.classList.remove(STATUS_OUT_OF_LIMIT_CLASSNAME);
+  } else {
+    // больше лимита
+    statusNode.innerText =
+      STATUS_OUT_OF_LIMIT + " (" + (LIMIT - sum) + " руб.)";
+    statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
   }
 }
