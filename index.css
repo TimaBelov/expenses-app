@@ -1,7 +1,64 @@
-.status_green{
-    color: green;
+html,
+button {
+  font-family: "Inter", sans-serif;
 }
 
-.status_red{
-    color: red;
+.main__header {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+
+  margin-bottom: 32px;
+}
+
+.main__form__input {
+  font-size: 32px;
+  line-height: 38px;
+  border: 1px solid black;
+
+  width: 484px;
+  padding: 10px 0;
+  padding-left: 22px;
+  margin-bottom: 18px;
+}
+
+.main__form__add-btn {
+  font-size: 32px;
+  line-height: 38px;
+
+  padding: 10px 110px;
+  border: none;
+
+  background-color: #0094ff;
+}
+
+.main__form__select {
+  display: block;
+  border: 1px solid black;
+
+  font-size: 32px;
+  line-height: 38px;
+  padding: 10px 0;
+  padding-left: 22px;
+  width: 484px;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.main__form__select:not([multiple]) {
+  padding-right: 1.2em;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.25em) 50%;
+  background-size: 22px 15px;
+  background-image: url(arrow.png);
+}
+
+.status_green {
+  color: green;
+}
+
+.status_red {
+  color: red;
 }

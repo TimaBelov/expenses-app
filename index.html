@@ -5,27 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Учёт расходов</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Учёт расходов</h1>
-    <input class="js-exspense-input" type="number" />
-    <button class="js-button">Добавить</button>
-    <select class="js-category">
-        <option value="0">Транспорт</option>
-        <option value="1">Кафе и рестораны</option>
-        <option value="2"> Аптека</option>
-        <option value="3">Развлечения</option>
-    </select>
-    <p > Лимит: <span class="js-limit"></span> руб.</p>
-    <p >Сумма: <span class="js-sum-exspenses"></span> руб.</p>
-    <p >Статус: <span class="js-status status_green">всё хорошо</span></p>
-
-    <h2>История:</h2>
-    <ol class="history_exspenses js-history">
-    </ol>
-
-    <button class="js-reset-button">Сбросить расходы</button>
+    <main class="main">
+      <h1 class="main__header">Учёт расходов</h1>
+      <form action="" class="main__form">
+        <input class="js-exspense-input main__form__input" type="number" />
+        <button class="js-button main__form__add-btn">Добавить</button>
+        <select class="js-category main__form__select">
+          <option value="0">Транспорт</option>
+          <option value="1">Кафе и рестораны</option>
+          <option value="2">Аптека</option>
+          <option value="3">Развлечения</option>
+        </select>
+      </form>
+      <p>Лимит: <span class="js-limit"></span> руб.</p>
+      <p>Сумма: <span class="js-sum-exspenses"></span> руб.</p>
+      <p>Статус: <span class="js-status status_green">всё хорошо</span></p>
+      <h2>История:</h2>
+      <ol class="history_exspenses js-history"></ol>
+      <button class="js-reset-button">Сбросить расходы</button>
+    </main>
     <script src="index.js"></script>
   </body>
 </html>
