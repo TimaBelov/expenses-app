@@ -29,9 +29,12 @@
       </form>
       <section class="main__info">
         <div>
-          <p class="main__info__heading">
-            Лимит: <span class="js-limit main__description"></span> руб.
-          </p>
+          <div class="main__limit">
+            <p class="main__info__heading">
+              Лимит: <span class="js-limit main__description"></span> руб.
+            </p>
+            <img src="popup_open_icon.png" alt="иконка открытия окна для изменения лимита" class="js-popup-open popup__open-icon">
+          </div>
           <p class="main__info__heading main__info__sum">
             Сумма: <span class="js-sum-exspenses main__description"></span> руб.
           </p>
@@ -50,7 +53,18 @@
           <ol class="history_exspenses js-history"></ol>
         </div>
       </section>
+      <div class="js-popup popup">
+        <div class="popup__content">
+          <div class="popup__content__row">
+            <p class="popup__content__heading">Новый лимит</p>
+            <img src="popup_close_icon.png" alt="иконка закрытия всплывающего окна" class="js-popup-close popup__close-icon">
+          </div>
+          <input type="number" class="js-popup-input popup__content__input">
+          <button class="js-popup-change-limit popup__content__button">Задать лимит</button>
+        </div>
+      </div>
     </main>
     <script src="index.js"></script>
+    <script src="popup.js"></script>
   </body>
 </html>

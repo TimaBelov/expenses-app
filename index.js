@@ -1,4 +1,4 @@
-const LIMIT = 10000;
+let LIMIT = 10000;
 const CURRENCY = "руб.";
 const STATUS_IN_LIMIT = "всё хорошо";
 const STATUS_OUT_OF_LIMIT = "всё плохо";
@@ -26,7 +26,7 @@ buttonNode.addEventListener("click", function (e) {
   renderSum(expenses);
   // работа со статусом
   renderStatus(expenses);
-  e.preventDefault();
+  e.preventDefault(); // отключение стандартной перезагрузки страницы при клике на кнопку в форме
 });
 
 resetButtonNode.addEventListener("click", function () {
@@ -36,7 +36,7 @@ resetButtonNode.addEventListener("click", function () {
 });
 
 function init(expenses) {
-  limitNode.innerText = LIMIT;
+  renderLimit();
   renderStatus(expenses);
   renderSum(expenses);
   renderHistory(expenses);
@@ -90,4 +90,8 @@ function renderStatus(expenses) {
       STATUS_OUT_OF_LIMIT + " (" + (LIMIT - sum) + " руб.)";
     statusNode.classList.add(STATUS_OUT_OF_LIMIT_CLASSNAME);
   }
+}
+
+function renderLimit(){
+  limitNode.innerText = LIMIT;
 }
