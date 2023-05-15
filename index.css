@@ -3,6 +3,7 @@
 html,
 button {
   font-family: "Inter", sans-serif;
+  
 }
 
 .body__fixed{
@@ -32,18 +33,36 @@ button:hover {
 }
 
 .main__form {
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 28px;
+  row-gap: 43px;
   margin-bottom: 60px;
 }
 
+.expenses__input{
+  width: 484px;
+}
+
+.main__input__wrapper{
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 17px 9px 22px;
+  border: 1px solid #000;
+}
 .main__form__input {
   font-size: 32px;
-  line-height: 38px;
-  border: 1px solid black;
-
-  width: 484px;
-  padding: 10px 0;
-  padding-left: 22px;
-  margin-bottom: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+.rub::after{
+  font-size: 32px;
+  content: " руб.";
 }
 
 .main__form__add-btn {
